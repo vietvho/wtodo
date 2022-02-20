@@ -28,7 +28,7 @@ jobs:
     - name: build website
       run: \[ -d wtodo/.git \] && cd wtodo && git reset --hard && git pull || git clone  git@github.com:vietvho/wtodo.git wtodo
       working-directory: /home/warren
-    - run: git checkout main
+    - run: git checkout master
       working-directory: /home/warren/wtodo
     - run: npm install yarn
       working-directory: /home/warren/wtodo
