@@ -36,5 +36,5 @@ jobs:
       working-directory: /home/warren/wtodo
     - run: yarn upgrade
       working-directory: /home/warren/wtodo
-    - run: yarn serve
+    - run: yarn serve &
       working-directory: /home/warren/wtodo
