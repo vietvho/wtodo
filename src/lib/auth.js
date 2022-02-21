@@ -7,7 +7,8 @@ const Wauth = {
         // create a mixin
         Vue.mixin({
             async mounted() {
-                const response = await axios.get('http://localhost:8000/api/user',{
+
+                const response = await axios.get('/api/user',{
                     withCredentials: true,
                     credentials: 'same-origin',
                 })

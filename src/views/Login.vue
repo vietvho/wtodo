@@ -82,7 +82,7 @@ export default {
           withCredentials: true
         };
 
-        axios.post('http://localhost:8000/api/login',data, {withCredentials: true})
+        axios.post('/api/login',data, {withCredentials: true})
         .then( (response) => {
             if (response.data.message == 'login-success') {
               router.push({path: '/'})

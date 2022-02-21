@@ -96,7 +96,7 @@ export default {
             withCredentials: true
         };
 
-        axios.post('http://localhost:8000/api/register',data, {withCredentials: true})
+        axios.post('/api/register',data, {withCredentials: true})
         .then( (response) => {
             if (response.data.error) {
               this.errors.register = response.data.info;

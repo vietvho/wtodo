@@ -13,6 +13,7 @@
     ></v-text-field>
     <v-btn
         small
+        v-if="newList.length > 1"
         :color = "!disableDraggable ? 'green lighten-1': ''"
         @click="disableDraggable=!disableDraggable"
       >
@@ -103,7 +104,7 @@ export default {
     data: () => ({
         newTaskTitle: "",
         pageTitle: "Vue Todo",
-        newList: [],
+        tasks: [],
         deletedTasks: [],
         disableDraggable: false,
         currentPage: 0,
@@ -111,7 +112,7 @@ export default {
         alert: {
             success: 'test'
         },
-        tasks: [
+        newList: [
             {
                 id: 1,
                 title : "This",
@@ -142,7 +143,7 @@ export default {
         category: "todo",
     }),
     created() {
-        axios.get('http://localhost:8000/api/tasks',{
+        axios.get('/api/tasks',{
                 withCredentials: true,
                 credentials: 'same-origin',
             }).then(response => {
@@ -216,7 +217,7 @@ export default {
                 withCredentials: true
             };
             this.loading = true;
-            axios.post('http://localhost:8000/api/tasks',data, {withCredentials: true})
+            axios.post(process.env.VUE_APP_BACKEND_URL+'/api/tasks',data, {withCredentials: true})
             .then( () => {
                 this.loading = false;
                 store.commit('alert/messageSuccess', "Saved Tasks");

@@ -122,7 +122,7 @@
    
     methods: {
       doLogOut() {
-        axios.post('http://localhost:8000/api/logout',{}, {withCredentials: true})
+        axios.post('/api/logout',{}, {withCredentials: true})
         .then( (response) => {
             if (response.data.message == 'logged-out') {
               localStorage.removeItem('user');

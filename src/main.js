@@ -4,6 +4,9 @@ import vuetify from './plugins/vuetify'
 import router from "./router"
 import Wauth from "./lib/auth"
 import store from "./store/store"
+import axios from "axios";
+axios.defaults.baseURL = process.env.VUE_APP_BACKEND_URL;
+
 Vue.use(Wauth);
 
 Vue.config.productionTip = false
