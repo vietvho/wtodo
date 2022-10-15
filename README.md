@@ -20,5 +20,7 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Demostration
+This is only for demonstration purposes at http://wtodo.ga/.
+As a result, no configuration to change the database connection was being built.
+Thanks! 
